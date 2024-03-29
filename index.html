@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA OCA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <div id="boton1-container">
+
+        <img src="img/logoOCA.png" alt="logoOCA" class="centrada">
+        
+        <button class="button-77" role="button">JUGAR</button>
+
+    </div>
+
+    <audio id="sonido1">
+        <source src="sound/sonidopato.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+    
+ACTIVIDAD
+
+Vamos a crear el juego de la Oca
+
+Para ello necesitamos crear una página que será nuestro juego.
+
+Tendremos un desplegable donde indicaremos el número de jugadores qué van a tomar parte en la partida 
+el número estará comprendido entre 2 y cuatro.
+
+Cada jugador podrá escoger con qué ficha quiere participar (color , forma ó imagen ) de modo que esta 
+información se deberá de guardar en un array que tendrá tantas posiciones cómo jugadores vayan a tomar 
+parte en la partida y que guardará ,también, en que casilla está la ficha en cada momento.
+
+Usaremos como tablero una imagen donde se deben poder ver las casillas del juego de la oca.
+
+Por cada jugador deberá aparecer en el momento que le toque mover ficha un botón para tirar el dado. 
+El valor del dado se obtendrá generando un número aleatorio entero con valores entre el 1 y el 6.
+En cada turno solo estará visible el botón de dado del jugador al que le toque tirar, los demás botones
+deberán estar ocultos.
+
+Una vez haya aparecido el numero de movimientos que debe hacer el jugador, la ficha se moverá tantas veces
+como indique el número y en su posición en el array se sumara el numero de movimientos que ha realizado, 
+de modo que estará guardado el numero de casilla en el que debe estar la ficha.
+
+Durante toda la partida deberá de ser visible un botón que permita reiniciar la partida y que colocará de 
+nuevo las fichas en la casilla de salida.
+
+La partida termina cuando todos los jugadores hayas salido del tablero.
+
+Ganará la partida la ficha que primero sobrepase la última posición del tablero.
+
+Una vez terminada la partida deberá de aparecer una tabla dónde se indique el orden en el que han terminado 
+cada 1 de los participantes de la partida.
+
+IMPORTANTE!!
+
+El código debe estar correctamente comentado
+Es necesario aplicar un estilo
+La funcionalidad debe ser lo más óptima posible
+Los estilos y el código deben estar en archivos independiente para que el punto uno de la rubrica se de por correcto (.CSS,.Js, imagenes ....)
+-->

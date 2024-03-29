@@ -1,0 +1,428 @@
+/**/
+
+/*Le damos estilo al fondo de la página de inicio de nuestro juego*/
+@keyframes move-it {
+    0% {
+        background-position: initial;
+    }
+
+    100% {
+        background-position: 100px 0px;
+    }
+}
+
+/* ESTILO PARA EL CUERPO, FONDO CON MOVIMIENTO */
+
+body {
+    background: repeating-linear-gradient(45deg,
+            #606dbc,
+            #606dbc 5%,
+            #465298 5%,
+            #465298 10%);
+    background-size: 100px 100px;
+    animation: move-it 10s linear infinite;
+    margin-top: 70px;
+}
+
+/* TIPOGRAFIA GENERAL DEL JUEGO */
+
+h2,h5 {
+    font-family: Candara, sans-serif;
+}
+
+
+/*Estilos CSS internos para centrar el logo principal */
+
+.centrada {
+    display: block;
+    margin: 100px auto 50px;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+}
+
+.force-dropdown-display {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#boton1-container {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto; 
+    height: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+/* ESTILOS DEL BOTON DE INDEX */
+
+.button-77 {
+    position: relative;
+    align-items: center;
+    appearance: none;
+    background-clip: padding-box;
+    background-color: initial;
+    background-image: none;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: Eina01, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    justify-content: center;
+    line-height: 24px;
+    margin: 0;
+    min-height: 64px;
+    outline: none;
+    overflow: visible;
+    padding: 19px 26px; /* Estilo original del padding */
+    pointer-events: auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: auto;
+    word-break: keep-all;
+    z-index: 0;
+}
+
+@media (min-width: 768px) {
+    .button-77 {
+        padding: 19px 32px;
+    }
+}
+
+.button-77:before,
+.button-77:after {
+    border-radius: 80px;
+}
+
+.button-77:before {
+    background-color: rgba(103, 15, 115, 0.32);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -2;
+}
+
+.button-77:hover:not(:disabled):after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition-timing-function: ease-in;
+}
+
+.button-77:after {
+    background-color: initial;
+    background-image: linear-gradient(92.83deg, #ff75ea 0, #d700db 100%);
+    bottom: 4px;
+    content: "";
+    display: block;
+    left: 4px;
+    overflow: hidden;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    transition: all 100ms ease-out;
+    z-index: -1;
+}
+
+/* Le agregamos el estilo a la tarjeta de selección de CUANTOS participantes jugarán*/
+
+
+.card1 {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 9px;
+    max-width: 100px;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 140px;
+
+}
+
+.card1 h5 {
+    margin-bottom: 0px;
+    margin-top: 16px;
+}
+
+.card1 select,
+.card1 button {
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 10px;
+}
+
+.card1 button {
+    background-image: linear-gradient(92.83deg, #ff75ea 0, #d700db 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card1 button:hover {
+    background-color: #b300a7;
+}
+
+
+/* Le agregamos el estilo a la tarjeta de personajes*/
+
+.card2 {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 17px;
+    margin: -35px auto; /* Ajusta el margen según sea necesario */
+    max-width: 545px;
+    text-align: center; /* Alinea el texto a la izquierda */
+    background-color: #fff; /* Fondo blanco */
+    margin-left: 46px; /* Desplaza la tarjeta hacia la izquierda */
+    margin-right: 25px;
+    height: 154px;
+    width: 441px;
+}
+.characters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.character {
+    width: 60px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+}
+
+.character.disabled {
+    opacity: 0.5;
+    /* Reduce la opacidad para deshabilitar visualmente */
+    cursor: not-allowed;
+    /* Cambia el cursor a "no permitido" */
+}
+
+/* Estilos logo superior oca*/
+
+.ocaenjuego {
+    position: absolute;
+    top: 50px;
+    /* Ajusta según sea necesario */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    /* ajustamos el tamaño según lo necesitemos */
+    height: auto;
+    /* Esto mantendrá la proporción de la imagen */
+}
+
+.cajajugadores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -26px;
+    margin-right: 27px;
+}
+
+.boton-reset {
+    margin-top: -385px; /* Espacio superior */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Borde redondeado */
+    padding: 100px 59px; /* Espaciado interno */
+    font-family: "Arial", sans-serif; /* Fuente del texto */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Cursor al pasar el ratón */
+    padding-right: 1px;
+}
+
+/* ESTILO BOTON PRINCIPAL MORADO DEL JUEGO  */
+
+.button-61 {
+  align-items: center;
+  appearance: none;
+  border-radius: 4px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 1px -2px,rgba(0, 0, 0, .14) 0 2px 2px 0,rgba(0, 0, 0, .12) 0 1px 5px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Roboto,sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  height: 28px;
+  justify-content: center;
+  letter-spacing: .0892857em;
+  line-height: normal;
+  min-width: 48px;
+  outline: none;
+  overflow: visible;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  will-change: transform,opacity;
+}
+
+.button-61:hover {
+  box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+
+.button-61:disabled {
+  background-color: rgba(0, 0, 0, .12);
+  box-shadow: rgba(0, 0, 0, .2) 0 0 0 0, rgba(0, 0, 0, .14) 0 0 0 0, rgba(0, 0, 0, .12) 0 0 0 0;
+  color: rgba(0, 0, 0, .37);
+  cursor: default;
+  pointer-events: none;
+}
+
+.button-61:not(:disabled) {
+  background-color: #6200ee;
+}
+
+.button-61:focus {
+  box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+
+.button-61:active {
+  box-shadow: rgba(0, 0, 0, .2) 0 5px 5px -3px, rgba(0, 0, 0, .14) 0 8px 10px 1px, rgba(0, 0, 0, .12) 0 3px 14px 2px;
+  background: #A46BF5;
+}
+
+/* ESTILOS EN RELACIÓN AL TABLERO  */
+
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  max-width: 900px;
+  background-color: white;
+  padding: 20px;
+  padding-bottom: 38px;
+  border-radius: 10px;
+  margin: 75px auto 180px; /* Modificamos el margen inferior */
+  height: 620px;
+}
+
+.board div {
+  overflow: hidden;
+}
+
+
+.tablero {
+  width: 90%;
+  height: 90%;
+  margin: auto; /* Centra horizontalmente */
+  display: flex; /* Utiliza flexbox */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+}
+
+
+
+.resultado-content {
+    font-family: "Candara", sans-serif; /* Aplica la misma fuente */
+    font-size: 12px; /* Establece el mismo tamaño de fuente */
+    color: #000; /* Color de texto negro */
+    margin-top: 1px; /* Espacio superior */
+}
+
+
+
+#playerInfo {
+    display: inline-flex;
+    font-family: "Candara", sans-serif;
+    font-size: 14px; /* Establece el tamaño de la fuente */
+    color: #000; /* Color de texto negro */
+    margin-top: 10px; /* Espacio superior */
+}
+
+/* FICHAS EN TABLERO  */
+
+
+.cajatablero {
+    position: relative; /* Asegura que los elementos hijos posicionados absolutamente sean relativos a este contenedor */
+    width: 100%;
+    height: 79%;
+}
+.character1 {
+    position: absolute;
+    bottom: 60px; /* Mismo valor que character1 */
+    top: 382px;
+    right: 50px;
+    left: -60px;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+    filter: drop-shadow(0 0 0.75rem rgb(238, 255, 0));
+}
+
+.character2 {
+    position: absolute;
+    bottom: 60px; /* Mismo valor que character1 */
+    top: 382px;
+    right: 50px;
+    left: -60px;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+    filter: drop-shadow(0 0 0.75rem rgb(0, 255, 26));
+}
+
+.character3 {
+    position: absolute;
+    bottom: 60px;
+    top: 382px;
+    right: 50px;
+    left: -60px;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+    filter: drop-shadow(0 0 0.75rem rgb(255, 0, 0));
+}
+
+.character4 {
+    position: absolute;
+    bottom: 60px;
+    top: 382px;
+    right: 50px;
+    left: -60px;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+    filter: drop-shadow(0 0 0.75rem rgb(0, 149, 255));
+}
+
+#imagenGanador {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8); /* Escala la imagen al 80% de su tamaño original */
+    opacity: 0;
+    z-index: 9999; /* Establece un valor alto para asegurar que la imagen esté por encima de todos los demás elementos */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transición para opacidad y transformación */
+}

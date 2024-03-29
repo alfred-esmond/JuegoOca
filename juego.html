@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA OCA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <img src="img/logoOCA.png" alt="logoOCA" class="ocaenjuego">
+
+    <!-- Contenedor principal del tablero del juego -->
+    <div class="board">
+        <div class="cajatablero">
+            <img src="img/tablero.png" alt=tablero class="tablero">
+            <img src="img/amarillo.png" alt="amarillo" id="amarilloficha" class="character1">
+            <img src="img/verde.png" alt="verde" id="verdeficha" class="character2">
+            <img src="img/rojo.png" alt="rojo" id="rojoficha" class="character3">
+            <img src="img/azul.png" alt="azul" id="azulficha" class="character4">
+
+        </div>
+
+        <div id="resultadoDado" class="resultado-dado"></div>
+
+
+        <!-- Contenedor para mostrar las imágenes de los personajes disponibles -->
+        <div class="card2">
+
+            <h2>Tu personaje</h2>
+
+            <div class="characters">
+                <img src="img/amarillo.png" alt="amarillo" id="amarillo" class="character">
+                <img src="img/verde.png" alt="verde" id="verde" class="character">
+                <img src="img/rojo.png" alt="rojo" id="rojo" class="character">
+                <img src="img/azul.png" alt="azul" id="azul" class="character">
+            </div>
+
+            <div id="playerInfo">
+                Jugador1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Jugador2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Jugador3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Jugador4</div>
+        </div>
+
+
+        <audio id="clickSound">
+            <source src="sound/click.mp3" type="audio/mpeg">
+          </audio>
+
+        <!-- Contenedor de los botones de tirar dado -->
+        <div class="cajajugadores">
+            <button class="button-61 dado-button" id="dadoJugador1" onclick="lanzarDado(1); playClickSound()">Dado Jugador 1</button>
+            <div class="resultado-content" id="resultado1">0 - Posición: 0</div>
+            <button class="button-61 dado-button" id="dadoJugador2" onclick="lanzarDado(2); playClickSound()">Dado Jugador 2</button>
+            <div class="resultado-content" id="resultado2">0 - Posición: 0</div>
+            <button class="button-61 dado-button" id="dadoJugador3" onclick="lanzarDado(3); playClickSound()">Dado Jugador 3</button>
+            <div class="resultado-content" id="resultado3">0 - Posición: 0</div>
+            <button class="button-61 dado-button" id="dadoJugador4" onclick="lanzarDado(4); playClickSound()">Dado Jugador 4</button>
+            <div class="resultado-content" id="resultado4">0 - Posición: 0</div>
+        </div>
+
+
+        <!--Aqui insertamos un modulo de selección de jugadores-->
+        <div class="card1">
+            <h5>Selecciona el número de jugadores</h5>
+            <select id="numeroJugadores">
+                <option value="2">2 Jugadores</option>
+                <option value="3">3 Jugadores</option>
+                <option value="4">4 Jugadores</option>
+            </select>
+        </div>
+
+        <div class="boton-reset">
+            <button class="button-61 btnReset" role="button" id="btnReset">RESET</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="cuadricula.js"></script>
+
+
+</body>
+
+</html>
