@@ -157,8 +157,8 @@ function lanzarDado(playerNumber) {
     if (currentPlayer.position >= 60) {
         resultadoDiv.textContent = "HAS GANADO!";
         setTimeout(function () {
-            window.location.href = "index.html"; // Redirige a index.html después de 7 segundos
-        }, 7000);
+            window.location.href = "index.html"; // Redirige a index.html después de 12 segundos
+        }, 12000);
     } else {
         resultadoDiv.textContent = resultado + " - Posición: " + currentPlayer.position;
     }
@@ -178,29 +178,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// FUNCION PARA MOSTRAR EL ORDEN FINAL DE LOS JUGADORES
+
+// Variable global para controlar si se ha mostrado el mensaje de posiciones(me aparecia varias veces)
+var posicionesMostradas = false;
+
 // Función para mostrar las posiciones de los jugadores de mayor a menor
 function mostrarPosiciones() {
-    // Creamos un array de objetos con las posiciones de los jugadores
-    let jugadores = [
-        { nombre: 'Jugador1', posicion: players[0].position },
-        { nombre: 'Jugador2', posicion: players[1].position },
-        { nombre: 'Jugador3', posicion: players[2].position },
-        { nombre: 'Jugador4', posicion: players[3].position }
-    ];
+    // Verificar si ya se ha mostrado el mensaje de posiciones
+    if (!posicionesMostradas) {
+        // Establecer la bandera a true para evitar que se muestre más de una vez
+        posicionesMostradas = true;
 
-    // Ordenamos el array por la posición de los jugadores de forma descendente
-    jugadores.sort((a, b) => b.posicion - a.posicion);
+        // Creamos un array de objetos con las posiciones de los jugadores
+        let jugadores = [
+            { nombre: 'Jugador1', posicion: players[0].position },
+            { nombre: 'Jugador2', posicion: players[1].position },
+            { nombre: 'Jugador3', posicion: players[2].position },
+            { nombre: 'Jugador4', posicion: players[3].position }
+        ];
 
-    // Creamos un mensaje con las posiciones ordenadas
-    let mensaje = 'Posiciones de los jugadores:\n';
-    jugadores.forEach((jugador, index) => {
-        mensaje += `${index + 1}. ${jugador.nombre} - Casilla final: ${jugador.posicion}\n`;
-    });
+        // Ordenamos el array por la posición de los jugadores de forma descendente
+        jugadores.sort((a, b) => b.posicion - a.posicion);
 
-    // Mostramos el mensaje emergente (alert) en pantalla
-    setTimeout(function() {
-        alert(mensaje);
-    }, 4000); // Mostrar el alert después de 4 segundos
+        // Creamos un mensaje con las posiciones ordenadas
+        let mensaje = 'Posiciones de los jugadores:\n';
+        jugadores.forEach((jugador, index) => {
+            mensaje += `${index + 1}. ${jugador.nombre}\n`;
+        });
+
+        // Mostramos el mensaje emergente (alert) en pantalla (con la estetica de sweetalert)
+        Swal.fire(mensaje);
+    }
 }
 
 
@@ -217,6 +226,15 @@ function mostrarImagenGanador(playerNumber) {
         imagenGanador.style.opacity = "1";
     }, 100); // Cambiar este valor según sea necesario
 
-    // Llamar a la función para mostrar las posiciones después de mostrar la imagen del ganador
-    mostrarPosiciones();
+    // Desvanecer la imagen después de cierto tiempo
+    setTimeout(function() {
+        imagenGanador.style.transition = "opacity 1s";
+        imagenGanador.style.opacity = "0";
+        // Eliminar la imagen después de completar la animación de desvanecimiento
+        setTimeout(function() {
+            imagenGanador.parentNode.removeChild(imagenGanador);
+            // Llamar a la función para mostrar las posiciones después de mostrar la imagen del ganador
+            mostrarPosiciones();
+        }, 1000); // 1000 milisegundos = 1 segundo
+    }, 1500); // Desvanecer (1500 milisegundos)
 }

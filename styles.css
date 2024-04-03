@@ -426,3 +426,7 @@ h2,h5 {
     z-index: 9999; /* Establece un valor alto para asegurar que la imagen esté por encima de todos los demás elementos */
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transición para opacidad y transformación */
 }
+
+.swal2-container {
+    z-index: 10000;
+}
